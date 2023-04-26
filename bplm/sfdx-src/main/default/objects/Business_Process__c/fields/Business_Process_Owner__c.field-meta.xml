@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Process_Owner__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>business process owner i.e. dept head?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>business process owner i.e. dept head?</inlineHelpText>
+    <label>Business Process Owner</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Business Processes</relationshipLabel>
+    <relationshipName>BP2BpOwner</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

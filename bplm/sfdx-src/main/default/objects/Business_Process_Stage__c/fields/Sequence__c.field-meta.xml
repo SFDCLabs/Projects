@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sequence__c</fullName>
+    <description>Stage sequence in business process i.e. 2 or 5</description>
+    <externalId>false</externalId>
+    <inlineHelpText
+  >Stage sequence in business process i.e. 2 or 5</inlineHelpText>
+    <label>Sequence</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

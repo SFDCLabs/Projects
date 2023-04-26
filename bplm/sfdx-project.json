@@ -1,0 +1,12 @@
+{
+  "packageDirectories": [
+    {
+      "path": "sfdx-src",
+      "default": true
+    }
+  ],
+  "name": "bplm",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "57.0"
+}
