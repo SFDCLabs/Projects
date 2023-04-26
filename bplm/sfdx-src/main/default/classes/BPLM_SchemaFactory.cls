@@ -42,6 +42,6 @@ public class BPLM_SchemaFactory {
     if(bplmSchema == null || bplmSchema.isEmpty()) {
       loadBPLMConfigurationSchema();
     }
-    
+     
     return null;
   }
