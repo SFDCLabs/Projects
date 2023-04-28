@@ -20,21 +20,6 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Business_Process_Entity_Config__mdt.Business_Process_Configuration__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Business_Process_Entity_Config__mdt.Is_Active__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Business_Process_Entity_Config__mdt.SObjectType__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Business_Process_Stage__c.Buffer_Days__c</field>
         <readable>true</readable>
@@ -240,6 +225,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Business_Process__c.Business_Brand_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Business_Process__c.Business_Org__c</field>
         <readable>true</readable>
@@ -264,11 +254,13 @@
         <field>Business_Process__c.Process_Summary__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Business_Process__c.Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Business_Process_Config__mdt-Business Process Configuration Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Business_Process_Entity_Config__mdt-Business Process Entity Config Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Business_Process_Live__c-Process Live Layout</layout>

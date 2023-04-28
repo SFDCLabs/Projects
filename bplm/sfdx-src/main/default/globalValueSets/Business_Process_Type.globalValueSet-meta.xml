@@ -1,9 +1,29 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <customValue>
         <fullName>Default</fullName>
         <default>false</default>
         <label>Default</label>
+    </customValue>
+    <customValue>
+        <fullName>New Initiative</fullName>
+        <default>false</default>
+        <label>New Initiative</label>
+    </customValue>
+    <customValue>
+        <fullName>Enhancement</fullName>
+        <default>false</default>
+        <label>Enhancement</label>
+    </customValue>
+    <customValue>
+        <fullName>Release Management</fullName>
+        <default>false</default>
+        <label>Release Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Project Management</fullName>
+        <default>false</default>
+        <label>Project Management</label>
     </customValue>
     <masterLabel>Business Process Type</masterLabel>
     <sorted>false</sorted>
