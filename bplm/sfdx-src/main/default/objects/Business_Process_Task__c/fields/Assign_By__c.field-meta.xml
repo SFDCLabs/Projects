@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assign_By__c</fullName>
+    <externalId>false</externalId>
+    <label>Assign By</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Developer Name</fullName>
+                <default>false</default>
+                <label>Developer Name</label>
+            </value>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <label>Email</label>
+            </value>
+            <value>
+                <fullName>Id</fullName>
+                <default>false</default>
+                <label>Id</label>
+            </value>
+            <value>
+                <fullName>Name</fullName>
+                <default>false</default>
+                <label>Name</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
