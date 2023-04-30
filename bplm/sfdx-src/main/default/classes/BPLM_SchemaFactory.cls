@@ -24,7 +24,7 @@ public class BPLM_SchemaFactory {
    * <p>
    *  This method generate bplmSchema (SObjectTypes used in BPLM and their respective fields)
    * </p>
-   * @return
+   * @return void
    */
   private static void loadBPLMConfigurationSchema() {   
     if(bplmSchema == null) {
@@ -49,6 +49,8 @@ public class BPLM_SchemaFactory {
 
   private static String generateSchemaSOQL() {
     loadBPLMConfigurationSchema();
+    String query = 'SELECT ';
+
     return null;
   }
 }

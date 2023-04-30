@@ -1,1 +1,4 @@
 select id, name, Business_Process_Task__r.id,Business_Process_Task__r.name,Business_Process_Step__r.id,Business_Process_Step__r.name,Business_Process_Step__r.Business_Process_Stage__r.id,Business_Process_Step__r.Business_Process_Stage__r.name,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.id, Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.name,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.Business_Brand_Name__c, (select id,name from Business_Process_Step_Task_Dependencies1__r) from Business_Process_Step_Task_Mapping__c
+
+
+SELECT {0} FROM {1} WHERE
