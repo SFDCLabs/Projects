@@ -11,7 +11,7 @@ public with sharing class BPLM_SchemaRepository implements BPLM_ISchemaRepositor
    * <p> This method build a query string that is expected to generate a dynamic query expected to get entire schema</p>
    */
   public String getBPLMSchemaQuery() {
-    String toReturn = 'SEELCT {0}, {1}, {2}, {3}, {4} FROM {5} where {6}';
+    String toReturn = 'SEELCT {0}, {1}, {2}, {3}, {4} FROM {5}';
     try {
       // Get all fields for Business_Process_Step_Task_Mapping__c except two relationships
       final String stepTaskMappingFieldsWithoutKeyRelationships = getBPLMstepTaskMappingQuery(); // {0}
@@ -29,10 +29,23 @@ public with sharing class BPLM_SchemaRepository implements BPLM_ISchemaRepositor
       use step as entry point as mentioned in above examples
       */
 
-      final String otherReferenceFields = getAllReferenceFields();
+      final String otherReferenceFields = getAllReferenceFields(); // {3}
 
       // build child subquery first to get all depencies for a mapping
       final String CHILD_SUBQUERY_MAPPING2DEPENDENCY = getBPLMStepTaskDependencyQuery(); // {4}
+
+      // define master entry point in complex query
+      final String mappingObjectName = 'Business_Process_Step_Task_Mapping__c'; // {5}
+
+      toReturn = String.format(toReturn, new List<String> {
+        stepTaskMappingFieldsWithoutKeyRelationships,
+        bplmTaskFields,
+        bplmStepFields,
+        otherReferenceFields,
+        CHILD_SUBQUERY_MAPPING2DEPENDENCY,
+        mappingObjectName
+      });
+
     } catch (Exception ex) {
       throw new BPLM_SchemaRepository.BPLMSchemaException(ex);
     }
@@ -47,8 +60,19 @@ public with sharing class BPLM_SchemaRepository implements BPLM_ISchemaRepositor
       use step as entry point as mentioned in above examples
       */
   private String getAllReferenceFields() {
+    String stageStartPoint = 'Business_Process_Step__r.Business_Process_Stage__r';
+    String processStartPoint = 'Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r';
     List<String> fields = new List<String>();
+    // Iterate over stage fields
+    for(String f: bplmSchema.get(Business_Process_Stage__c.SObjectType).keySet()) {
+      if(!f.equalsIgnoreCase('Business_Process__c')) { // avoid process fields will populate separately
+        fields.add(stageStartPoint+'.'+f);
+      }
+    }
 
+    for(String f: bplmSchema.get(Business_Process__c.SObjectType).keySet()) {
+        fields.add(processStartPoint+'.'+f);
+    }
     return String.join(fields, ',');
   }
 
@@ -57,22 +81,22 @@ public with sharing class BPLM_SchemaRepository implements BPLM_ISchemaRepositor
    */
   private String getBPLMStepTaskDependencyQuery() {
     final String CHILD_MAPPING2DEPENDENCY_RELATIONSHIP_NAME = 'Business_Process_Step_Task_Dependencies1__r';
-    final String CHILD_SUBQUERY_MAPPING2DEPENDENCY = '(select {0} from {1} WHERE {2})';
+    String childDependencyQuery = '(select {0} from {1} WHERE {2})';
     //arrange all fields from Business_Process_Step_Task_Dependency__c where the depends on relationship is Business_Process_Step_Task_Dependencies1__r
     List<String> stepTaskDependencyFields = new List<String>();
     stepTaskDependencyFields.addAll(
       bplmSchema.get(Business_Process_Step_Task_Dependency__c.SObjectType)
         .keySet()
     );
-    CHILD_SUBQUERY_MAPPING2DEPENDENCY = String.format(
-      CHILD_SUBQUERY_MAPPING2DEPENDENCY,
+    childDependencyQuery = String.format(
+      childDependencyQuery,
       new List<String>{
         String.join(stepTaskDependencyFields, ','),
-        CHILD_MAPPING2DEPENDENCY_RELATIONSHIP_NAME,
+        childDependencyQuery,
         ACTIVE_FLAG
       }
     );
-    return CHILD_SUBQUERY_MAPPING2DEPENDENCY;
+    return childDependencyQuery;
   }
 
   /**
