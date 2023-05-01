@@ -21,14 +21,28 @@
  */
 @isTest
 private class BPLM_SchemaRepositoryTest {
+    private static BPLM_SchemaRepository.BPLM_ISchemaRepository repository = new BPLM_SchemaRepository();
 
     @isTest
     static void testGetBPLMSchemaQuery() {
-        BPLM_SchemaRepository.BPLM_ISchemaRepository repository = new BPLM_SchemaRepository();
+        
         Test.startTest();
         String query = repository.getBPLMSchemaQuery();
-        System.debug(query);
+        //System.debug(query);
         Test.stopTest();
         System.assert(!String.isBlank(query), 'Query must not be null or empty');
+    }
+
+    @isTest(SeeAllData=true)
+    static void testGetBPLMSchemaByProcessName() {
+        List<Business_Process_Step_Task_Mapping__c> records = repository.getBPLMSchemaByProcessName('Intake_Process');
+        System.assert(records!= null && records.size() > 0, 'Must not be null or empty');
+    }
+
+    @isTest(SeeAllData=true)
+    static void testGetBPLMSchemaByProcessId() {
+        Business_Process__c bp = [select id,Process_Summary__c from business_process__c limit 1];
+        List<Business_Process_Step_Task_Mapping__c> records = repository.getBPLMSchemaByProcessId(bp.id);
+        System.assert(records!= null && records.size() > 0, 'Must not be null or empty');
     }
 }

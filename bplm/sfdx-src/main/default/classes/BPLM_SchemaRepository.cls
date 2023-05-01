@@ -9,9 +9,13 @@ public with sharing class BPLM_SchemaRepository implements BPLM_ISchemaRepositor
   final String ACTIVE_FLAG = 'Is_Active__c = true';
   /**
    * <p> This method build a query string that is expected to generate a dynamic query expected to get entire schema</p>
+   * Master query looks like this
+   * 
+   * SELECT id,ownerid,isdeleted,name,createddate,createdbyid,lastmodifieddate,lastmodifiedbyid,systemmodstamp,lastvieweddate,lastreferenceddate,is_active__c,business_process_step__c,business_process_task__c,sequence__c, Business_Process_Task__r.id,Business_Process_Task__r.ownerid,Business_Process_Task__r.isdeleted,Business_Process_Task__r.name,Business_Process_Task__r.createddate,Business_Process_Task__r.createdbyid,Business_Process_Task__r.lastmodifieddate,Business_Process_Task__r.lastmodifiedbyid,Business_Process_Task__r.systemmodstamp,Business_Process_Task__r.lastvieweddate,Business_Process_Task__r.lastreferenceddate,Business_Process_Task__r.assign_to_type__c,Business_Process_Task__r.priority__c,Business_Process_Task__r.is_active__c,Business_Process_Task__r.assign_to__c,Business_Process_Task__r.buffer_days__c,Business_Process_Task__r.manual_start_enabled__c,Business_Process_Task__r.task_summary__c,Business_Process_Task__r.activity_type__c,Business_Process_Task__r.subject__c,Business_Process_Task__r.assign_by__c, Business_Process_Step__r.id,Business_Process_Step__r.ownerid,Business_Process_Step__r.isdeleted,Business_Process_Step__r.name,Business_Process_Step__r.createddate,Business_Process_Step__r.createdbyid,Business_Process_Step__r.lastmodifieddate,Business_Process_Step__r.lastmodifiedbyid,Business_Process_Step__r.systemmodstamp,Business_Process_Step__r.lastvieweddate,Business_Process_Step__r.lastreferenceddate,Business_Process_Step__r.sequence__c,Business_Process_Step__r.step_summary__c,Business_Process_Step__r.business_process_step_owner__c,Business_Process_Step__r.is_active__c,Business_Process_Step__r.business_days_to_complete__c,Business_Process_Step__r.buffer_days__c,Business_Process_Step__r.priority__c,Business_Process_Step__r.business_process_stage__c, Business_Process_Step__r.Business_Process_Stage__r.id,Business_Process_Step__r.Business_Process_Stage__r.ownerid,Business_Process_Step__r.Business_Process_Stage__r.isdeleted,Business_Process_Step__r.Business_Process_Stage__r.name,Business_Process_Step__r.Business_Process_Stage__r.createddate,Business_Process_Step__r.Business_Process_Stage__r.createdbyid,Business_Process_Step__r.Business_Process_Stage__r.lastmodifieddate,Business_Process_Step__r.Business_Process_Stage__r.lastmodifiedbyid,Business_Process_Step__r.Business_Process_Stage__r.systemmodstamp,Business_Process_Step__r.Business_Process_Stage__r.lastvieweddate,Business_Process_Step__r.Business_Process_Stage__r.lastreferenceddate,Business_Process_Step__r.Business_Process_Stage__r.business_process_stage_owner__c,Business_Process_Step__r.Business_Process_Stage__r.stage_summary__c,Business_Process_Step__r.Business_Process_Stage__r.sequence__c,Business_Process_Step__r.Business_Process_Stage__r.business_days_to_complete__c,Business_Process_Step__r.Business_Process_Stage__r.buffer_days__c,Business_Process_Step__r.Business_Process_Stage__r.is_active__c,Business_Process_Step__r.Business_Process_Stage__r.priority__c,Business_Process_Step__r.Business_Process_Stage__r.days_before_due_date_for_at_risk__c,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.id,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.ownerid,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.isdeleted,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.name,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.createddate,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.createdbyid,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.lastmodifieddate,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.lastmodifiedbyid,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.systemmodstamp,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.lastvieweddate,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.lastreferenceddate,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.business_process_owner__c,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.process_summary__c,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.business_sobject_type__c,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.is_active__c,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.business_org__c,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.business_brand_name__c,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.type__c,Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.developer_name__c, (select id,ownerid,isdeleted,name,createddate,createdbyid,lastmodifieddate,lastmodifiedbyid,systemmodstamp,lastvieweddate,lastreferenceddate,business_process_step_task_mapping__c,depend_upon__c,is_active__c,task_name__c,depend_on_task_name__c from Business_Process_Step_Task_Dependencies1__r WHERE Is_Active__c = true) FROM Business_Process_Step_Task_Mapping__c
+   *
    */
   public String getBPLMSchemaQuery() {
-    String toReturn = 'SEELCT {0}, {1}, {2}, {3}, {4} FROM {5}';
+    String toReturn = 'SELECT {0}, {1}, {2}, {3}, {4} FROM {5}';
     try {
       // Get all fields for Business_Process_Step_Task_Mapping__c except two relationships
       final String stepTaskMappingFieldsWithoutKeyRelationships = getBPLMstepTaskMappingQuery(); // {0}
@@ -92,7 +96,7 @@ public with sharing class BPLM_SchemaRepository implements BPLM_ISchemaRepositor
       childDependencyQuery,
       new List<String>{
         String.join(stepTaskDependencyFields, ','),
-        childDependencyQuery,
+        CHILD_MAPPING2DEPENDENCY_RELATIONSHIP_NAME,
         ACTIVE_FLAG
       }
     );
@@ -121,18 +125,34 @@ public with sharing class BPLM_SchemaRepository implements BPLM_ISchemaRepositor
     return String.join(stepTaskMappingFields, ',');
   }
 
-  public List<Business_Process_Step_Task_Mapping__c> getBPLMSchemaByProcessName(
-    String processName
-  ) {
-    List<Business_Process_Step_Task_Mapping__c> toReturn = null;
 
+  /**
+   * <p> Return BPLM configuration for a given process by its developer_name__c field </p>
+   */
+  public List<Business_Process_Step_Task_Mapping__c> getBPLMSchemaByProcessName(
+    String processDeveloperName
+  ) {
+    if(String.isBlank(processDeveloperName)) {
+      throw new BPLMSchemaException('Reqired param processDeveloperName can not be null or blank');
+    }
+    String condition = ' WHERE Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.Developer_Name__c = :processDeveloperName';
+    String query = getBPLMSchemaQuery() + condition;
+    List<Business_Process_Step_Task_Mapping__c> toReturn = (List<Business_Process_Step_Task_Mapping__c>) Database.query(query);
     return toReturn;
   }
+
+  /**
+   * <p> Return BPLM configuration for a given process by its process id field </p>
+   */
   public List<Business_Process_Step_Task_Mapping__c> getBPLMSchemaByProcessId(
     String processId
   ) {
-    List<Business_Process_Step_Task_Mapping__c> toReturn = null;
-
+    if(String.isBlank(processId)) {
+      throw new BPLMSchemaException('Reqired param processId can not be null or blank');
+    }
+    String condition = ' WHERE Business_Process_Step__r.Business_Process_Stage__r.Business_Process__r.Id = :processId';
+    String query = getBPLMSchemaQuery() + condition;
+    List<Business_Process_Step_Task_Mapping__c> toReturn = (List<Business_Process_Step_Task_Mapping__c>) Database.query(query);
     return toReturn;
   }
 
@@ -180,7 +200,7 @@ public with sharing class BPLM_SchemaRepository implements BPLM_ISchemaRepositor
   public interface BPLM_ISchemaRepository {
     String getBPLMSchemaQuery();
     List<Business_Process_Step_Task_Mapping__c> getBPLMSchemaByProcessName(
-      String processName
+      String processDeveloperName
     );
     List<Business_Process_Step_Task_Mapping__c> getBPLMSchemaByProcessId(
       String processId
