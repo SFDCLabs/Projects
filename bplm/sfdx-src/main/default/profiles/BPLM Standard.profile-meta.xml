@@ -15,11 +15,6 @@
     </classAccesses>
     <custom>true</custom>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Business_Process_Config__mdt.Is_Active__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Business_Process_Live__c.End__c</field>
         <readable>true</readable>
@@ -289,9 +284,7 @@
         <field>Business_Process__c.Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <layoutAssignments>
-        <layout>Business_Process_Config__mdt-Business Process Configuration Layout</layout>
-    </layoutAssignments>
+    
     <layoutAssignments>
         <layout>Business_Process_Live__c-Process Live Layout</layout>
     </layoutAssignments>
