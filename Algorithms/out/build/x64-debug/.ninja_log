@@ -1,0 +1,19 @@
+# ninja log v5
+3	13	0	clean	8c45b54705a541e8
+171	281	7056891998335197	Algorithms/Algorithms.exe	129b8878ee11d89a
+16	163	7056891997299967	Algorithms/CMakeFiles/Algorithms.dir/Sorting.c.obj	eb1f6b2dcc0b7bbd
+9	171	7056891997305282	Algorithms/CMakeFiles/Algorithms.dir/Algorithms.c.obj	bcaca14f88c7abb7
+10	24	0	clean	8c45b54705a541e8
+10	21	0	clean	8c45b54705a541e8
+12	152	7056904775527021	Algorithms/CMakeFiles/Algorithms.dir/Algorithms.c.obj	24e52bb34d9c524
+20	163	7056904775527021	Algorithms/CMakeFiles/Algorithms.dir/Sorting.c.obj	2abe62ad2cec19dd
+27	187	7056904775885937	Algorithms/CMakeFiles/Algorithms.dir/Common.c.obj	ac13a3a61666f885
+187	333	7056904777150850	Algorithms/Algorithms.exe	9be532818c3a77cd
+2	16	0	clean	8c45b54705a541e8
+12	149	7056905276638363	Algorithms/CMakeFiles/Algorithms.dir/Algorithms.c.obj	24e52bb34d9c524
+20	151	7056905276638363	Algorithms/CMakeFiles/Algorithms.dir/Sorting.c.obj	2abe62ad2cec19dd
+28	153	7056905276638363	Algorithms/CMakeFiles/Algorithms.dir/Common.c.obj	ac13a3a61666f885
+153	297	7056905277866442	Algorithms/Algorithms.exe	9be532818c3a77cd
+19	93	7056943030946015	Algorithms/CMakeFiles/Algorithms.dir/Algorithms.c.obj	24e52bb34d9c524
+23	101	7056943031032669	Algorithms/CMakeFiles/Algorithms.dir/Sorting.c.obj	2abe62ad2cec19dd
+101	197	7056943031830286	Algorithms/Algorithms.exe	9be532818c3a77cd
