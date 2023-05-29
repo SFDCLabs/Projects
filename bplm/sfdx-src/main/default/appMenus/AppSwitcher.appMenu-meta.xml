@@ -64,8 +64,4 @@
         <name>BPLM</name>
         <type>CustomApplication</type>
     </appMenuItems>
-    <appMenuItems>
-        <name>Service_Manual</name>
-        <type>ConnectedApp</type>
-    </appMenuItems>
 </AppMenu>
