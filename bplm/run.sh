@@ -17,7 +17,6 @@ main_menu() {
     esac
 }
 
-
 help_menu() {
     echo "help"
 }
