@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
     <brand>
-        <headerColor>#68445B</headerColor>
-        <logo>Screenshot_20230520_234757</logo>
+        <headerColor>#F126AA</headerColor>
+        <logo>X11</logo>
         <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
@@ -20,11 +20,11 @@
     <tabs>Business_Process_Stage__c</tabs>
     <tabs>Business_Process_Step__c</tabs>
     <tabs>Business_Process_Task__c</tabs>
-    <tabs>Business_Process_Step_Task_Dependency__c</tabs>
     <tabs>Business_Process_Step_Task_Mapping__c</tabs>
-    <tabs>Business_Process_Workflow_Rule__c</tabs>
-    <tabs>Business_Process_Workflow_Action__c</tabs>
+    <tabs>Business_Process_Step_Task_Dependency__c</tabs>
     <tabs>Business_Process_Live__c</tabs>
+    <tabs>Business_Process_Workflow_Action__c</tabs>
+    <tabs>Business_Process_Workflow_Rule__c</tabs>
     <tabs>standard-report</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>BPLM_UtilityBar</utilityBar>

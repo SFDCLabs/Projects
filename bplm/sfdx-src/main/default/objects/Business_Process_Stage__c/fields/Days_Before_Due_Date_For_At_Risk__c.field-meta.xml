@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Days_Before_Due_Date_For_At_Risk__c</fullName>
-    <description
-  >How many days before due date so that stage can be flagged as At Risk i.e. 2 days before stage is completed</description>
+    <description>How many days before due date so that stage can be flagged as At Risk i.e. 2 days before stage is completed</description>
     <externalId>false</externalId>
-    <inlineHelpText
-  >How many days before due date so that stage can be flagged as At Risk i.e. 2 days before stage is completed</inlineHelpText>
+    <inlineHelpText>How many days before due date so that stage can be flagged as At Risk i.e. 2 days before stage is completed</inlineHelpText>
     <label>Days Before Due Date For At Risk</label>
     <precision>3</precision>
     <required>false</required>
