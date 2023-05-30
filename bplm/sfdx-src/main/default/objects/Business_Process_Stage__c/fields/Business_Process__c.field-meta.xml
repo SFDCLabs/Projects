@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Business_Process__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <description>Select business process this stage belong to</description>
     <externalId>false</externalId>
-    <inlineHelpText
-  >Select business process this stage belong to</inlineHelpText>
+    <inlineHelpText>Select business process this stage belong to</inlineHelpText>
     <label>Business Process</label>
     <referenceTo>Business_Process__c</referenceTo>
     <relationshipLabel>Business Process Stages</relationshipLabel>

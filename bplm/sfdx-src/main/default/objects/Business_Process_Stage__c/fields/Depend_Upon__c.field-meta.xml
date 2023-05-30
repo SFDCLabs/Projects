@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Business_Process_Stage__c</fullName>
+    <fullName>Depend_Upon__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <label>Business Process Stage</label>
+    <label>Depend Upon</label>
     <referenceTo>Business_Process_Stage__c</referenceTo>
-    <relationshipLabel>Business Process Steps</relationshipLabel>
-    <relationshipName>Business_Process_Steps</relationshipName>
+    <relationshipLabel>Business Process Stages</relationshipLabel>
+    <relationshipName>Business_Process_Stages</relationshipName>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Lookup</type>

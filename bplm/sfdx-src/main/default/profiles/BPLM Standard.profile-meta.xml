@@ -6,6 +6,10 @@
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>BPLM_Model</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>BPLM_SchemaFactory</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -19,6 +23,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>BPLM_SchemaRepositoryTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>BPLM_SchemaTransformer</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -79,6 +87,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Business_Process_Stage__c.Days_Before_Due_Date_For_At_Risk__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Business_Process_Stage__c.Depend_Upon__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -164,6 +177,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Business_Process_Step__c.Business_Process_Step_Owner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Business_Process_Step__c.Depend_Upon__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -358,9 +376,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Business_Process__c-Business Process Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Intake_Process__c-Intake Process Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Task-Task Layout</layout>
