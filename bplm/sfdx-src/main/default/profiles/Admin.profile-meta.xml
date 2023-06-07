@@ -56,6 +56,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Business_Process_Live__c.Business_Process__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Business_Process_Live__c.End__c</field>
         <readable>true</readable>
     </fieldPermissions>
