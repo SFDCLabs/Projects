@@ -71,6 +71,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Business_Process_Stage__c.Autocomplete__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Business_Process_Stage__c.Buffer_Days__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -102,6 +107,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Business_Process_Stage__c.Is_Active__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Business_Process_Stage__c.Is_Optional__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
