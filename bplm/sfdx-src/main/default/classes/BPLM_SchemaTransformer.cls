@@ -86,7 +86,7 @@ public class BPLM_SchemaTransformer {
     return model;
   }
 
-  public static BPLM_Model.BPLM_SchemaModel getBPLMProcessByName(String name) {
+  public static BPLM_Model.BPLM_SchemaModel getBPLMProcessByDeveloperName(String name) {
     BPLM_SchemaRepository.BPLM_ISchemaRepository repository = new BPLM_SchemaRepository();
     try {
       List<Business_Process_Step_Task_Mapping__c> schema = repository.getBPLMSchemaByProcessName(

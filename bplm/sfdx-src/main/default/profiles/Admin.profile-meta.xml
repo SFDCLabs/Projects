@@ -36,6 +36,11 @@
     <custom>false</custom>
     <fieldPermissions>
         <editable>true</editable>
+        <field>BPLM_Audit__c.query__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>BusinessBrand.Business_Brand_Leader__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -360,6 +365,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
+        <layout>BPLM_Audit__c-BPLM Audit Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>BusinessBrand-Business Brand Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -395,6 +403,15 @@
     <layoutAssignments>
         <layout>Task-Task Layout</layout>
     </layoutAssignments>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>BPLM_Audit__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -494,6 +511,10 @@
         <object>Intake_Process__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <tabVisibilities>
+        <tab>BPLM_Audit__c</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
     <tabVisibilities>
         <tab>Business_Process_Live__c</tab>
         <visibility>DefaultOff</visibility>
