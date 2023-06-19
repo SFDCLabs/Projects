@@ -6,22 +6,10 @@
         <label>Default</label>
     </customValue>
     <customValue>
-        <fullName>Intake Process</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>Intake Process</label>
-    </customValue>
-    <customValue>
         <fullName>Project Management</fullName>
         <default>false</default>
         <isActive>false</isActive>
         <label>Project Management</label>
-    </customValue>
-    <customValue>
-        <fullName>Release Management</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>Release Management</label>
     </customValue>
     <customValue>
         <fullName>Enhancement</fullName>
@@ -34,6 +22,18 @@
         <default>false</default>
         <isActive>false</isActive>
         <label>New Initiative</label>
+    </customValue>
+    <customValue>
+        <fullName>Intake Process</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Intake Process</label>
+    </customValue>
+    <customValue>
+        <fullName>Release Management</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Release Management</label>
     </customValue>
     <masterLabel>Business Process Type</masterLabel>
     <sorted>false</sorted>
