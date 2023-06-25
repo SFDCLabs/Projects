@@ -61,6 +61,10 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
+        <name>mRadar</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
         <name>BPLM</name>
         <type>CustomApplication</type>
     </appMenuItems>
