@@ -414,7 +414,7 @@
     </objectPermissions>
     <tabVisibilities>
         <tab>BPLM_Audit__c</tab>
-        <visibility>DefaultOff</visibility>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Business_Process_Live__c</tab>
