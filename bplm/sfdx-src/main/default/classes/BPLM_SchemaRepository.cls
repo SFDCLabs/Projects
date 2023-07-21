@@ -207,6 +207,5 @@ public with sharing class BPLM_SchemaRepository implements BPLM_ISchemaRepositor
     );
   }
 
-  public class BPLMSchemaException extends Exception {
-  }
+  public class BPLMSchemaException extends Exception {}
 }

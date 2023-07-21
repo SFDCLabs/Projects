@@ -153,13 +153,13 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>Business Process Live</label>
+    <label>BPLM Audit</label>
     <nameField>
-        <displayFormat>PL-{00000000}</displayFormat>
-        <label>Name</label>
+        <displayFormat>BPLMA-{00000000}</displayFormat>
+        <label>BPLM Audit Name</label>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Business Process Live</pluralLabel>
+    <pluralLabel>BPLM Audits</pluralLabel>
     <searchLayouts></searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
