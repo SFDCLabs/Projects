@@ -336,14 +336,14 @@
             FlowTest
         </name>
     </types>
-    <!--<types>
+    <!-- <types>
         <members>
             *
         </members>
         <name>
             ProcessFlowMigration
         </name>
-    </types>-->
+    </types> -->
     <types>
         <members>
             *
@@ -784,14 +784,14 @@
             PlatformEventChannelMember
         </name>
     </types>
-    <!--<types>
+    <types>
         <members>
             *
         </members>
         <name>
             EventRelayConfig
         </name>
-    </types>-->
+    </types>
     <types>
         <members>
             *
@@ -1304,14 +1304,14 @@
             UserProfileSearchScope
         </name>
     </types>
-    <!--<types>
+    <types>
         <members>
             *
         </members>
         <name>
             SearchCustomization
         </name>
-    </types>-->
+    </types>
     <types>
         <members>
             *
@@ -1320,7 +1320,7 @@
             PlatformEventSubscriberConfig
         </name>
     </types>
-    <!--<types>
+    <types>
         <members>
             *
         </members>
@@ -1335,7 +1335,7 @@
         <name>
             PortalDelegablePermissionSet
         </name>
-    </types>-->
+    </types>
     <types>
         <members>
             *

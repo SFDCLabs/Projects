@@ -46,3 +46,4 @@ $RECYCLE.BIN/
 .vscode/
 data/
 w.txt
+.pytest_cache
